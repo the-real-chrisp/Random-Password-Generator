@@ -10,5 +10,9 @@ function writePassword() {
 
 }
 
+function generatePassword () {
+  var data = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+}
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
