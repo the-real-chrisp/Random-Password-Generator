@@ -2,17 +2,16 @@
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
-
-}
-
 function generatePassword () {
-  var data = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  var passwordText = document.querySelector("#password");
+  var randomPassword = '';
+  var characters = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ\u0020\u0021";
+
+  for (i = 0; i < characters.length; i++) {
+    randomPassword += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+    passwordText.value = JSON.stringify(randomPassword, "#password");
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", generatePassword);
