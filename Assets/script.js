@@ -11,7 +11,7 @@ function generatePassword () {
   var passwordLength = prompt("How many charcters do you want in your password? Please select a value from 8-128.");
     if (passwordLength < 8 || passwordLength > 128) {
       alert("Please enter valid number!");
-      return generatePassword(); // how do I stop the process if they don't enter a valid #?
+      return "Password not generated. Please select a password length between 8-128. Please retry by clicking Generate Password again"
     }
   var charactersAll = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var allowedCharacters = "";
