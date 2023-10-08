@@ -1,8 +1,8 @@
 // Assignment Code
+//Method query selector targeting the generate id on HTML
 var generateBtn = document.querySelector("#generate");
-
+//Function to generate password 
 function generatePassword() {
-  var passwordText = document.querySelector("#password");
   var randomPassword = '';
   var numeric = confirm("Do you want numbers in your password?")
   var upperCase = confirm("Do you want upper case letters in your password?");
@@ -18,7 +18,6 @@ function generatePassword() {
     alert("Please enter valid number!");
     return "Password not generated. Please select a password length between 8-128. Please retry by clicking Generate Password again"
   }
-  var charactersAll = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var allowedCharacters = "";
   var lower = "abcdefghijklmnopqrstuvwxyz";
   var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
