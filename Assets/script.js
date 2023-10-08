@@ -27,19 +27,19 @@ function generatePassword () {
   console.log("allowedCharacters = ", allowedCharacters);
   
   if (upperCase) {
-    allowedCharacters += lower;
+    allowedCharacters += upper;
   }
 
   console.log("allowedCharacters = ", allowedCharacters);
   
-  if (lowerCase) {
-    allowedCharacters += lower;
+  if (numeric) {
+    allowedCharacters += numbers;
   }
 
   console.log("allowedCharacters = ", allowedCharacters);
   
-  if (lowerCase) {
-    allowedCharacters += lower;
+  if (specialCharacters) {
+    allowedCharacters += symbols;
   }
 
   console.log("allowedCharacters = ", allowedCharacters);
@@ -49,7 +49,7 @@ function generatePassword () {
     // }
   
   for (i = 0; i < passwordLength; i++) {
-    randomPassword += charactersAll.charAt(Math.floor(Math.random() * passwordLength));
+    randomPassword += allowedCharacters.charAt(Math.floor(Math.random() * allowedCharacters.length));
    } 
     return randomPassword;
 }
