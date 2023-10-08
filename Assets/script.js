@@ -1,7 +1,7 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
-function generatePassword () {
+function generatePassword() {
   var passwordText = document.querySelector("#password");
   var randomPassword = '';
   var numeric = confirm("Do you want numbers in your password?")
@@ -9,10 +9,15 @@ function generatePassword () {
   var lowerCase = confirm("Do you want lower case letters in your password?");
   var specialCharacters = confirm("Do you want special characters in your password?");
   var passwordLength = prompt("How many charcters do you want in your password? Please select a value from 8-128.");
-    if (passwordLength < 8 || passwordLength > 128) {
-      alert("Please enter valid number!");
-      return "Password not generated. Please select a password length between 8-128. Please retry by clicking Generate Password again"
-    }
+  passwordLength = parseInt(passwordLength);
+  if (isNaN(passwordLength)) {
+    alert("Please enter valid number!");
+    return "Password not generated. Please enter a numeric value between 8-128. Please retry by clicking Generate Password again"
+  }
+  if (passwordLength < 8 || passwordLength > 128) {
+    alert("Please enter valid number!");
+    return "Password not generated. Please select a password length between 8-128. Please retry by clicking Generate Password again"
+  }
   var charactersAll = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
   var allowedCharacters = "";
   var lower = "abcdefghijklmnopqrstuvwxyz";
@@ -25,37 +30,37 @@ function generatePassword () {
   }
 
   console.log("allowedCharacters = ", allowedCharacters);
-  
+
   if (upperCase) {
     allowedCharacters += upper;
   }
 
   console.log("allowedCharacters = ", allowedCharacters);
-  
+
   if (numeric) {
     allowedCharacters += numbers;
   }
 
   console.log("allowedCharacters = ", allowedCharacters);
-  
+
   if (specialCharacters) {
     allowedCharacters += symbols;
   }
 
   console.log("allowedCharacters = ", allowedCharacters);
-  
+
   if (lowerCase === false && upperCase === false && numeric === false && specialCharacters === false) {
     alert("You need to select at least one character type for your password");
     return "Password not generated. One character type must be selected. Please retry by clicking Generate Password again"
   }
-    // if (numeric === true && upperCase === true && lowerCase === true && specialCharacters === true) {
-      
-    // }
-  
+  // if (numeric === true && upperCase === true && lowerCase === true && specialCharacters === true) {
+
+  // }
+
   for (i = 0; i < passwordLength; i++) {
     randomPassword += allowedCharacters.charAt(Math.floor(Math.random() * allowedCharacters.length));
-   } 
-    return randomPassword;
+  }
+  return randomPassword;
 }
 
 // Write password to the #password input
