@@ -44,6 +44,10 @@ function generatePassword () {
 
   console.log("allowedCharacters = ", allowedCharacters);
   
+  if (lowerCase === false && upperCase === false && numeric === false && specialCharacters === false) {
+    alert("You need to select at least one character type for your password");
+    return "Password not generated. One character type must be selected. Please retry by clicking Generate Password again"
+  }
     // if (numeric === true && upperCase === true && lowerCase === true && specialCharacters === true) {
       
     // }
