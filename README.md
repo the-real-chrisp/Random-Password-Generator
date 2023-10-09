@@ -12,6 +12,8 @@ N/A
 
 To use this application, navigate to the URL provided below. First, click the "Generate Password" button to start the process. Next, a series of prompts will appear so the user can select which character types they'd like to be included in their password. The character types are upper case letters, lower case letters, numbers, and symbols. Finally, the application will ask how many characters long the user wants their password to be. Now they will have a randomly generated password!!!
 
+URL: https://the-real-chrisp.github.io/Random-Password-Generator/
+
 [Website-Screenshot](/Assets/Random_Password_Generator_Screenshot.png)
 
 ## Credits
